@@ -34,7 +34,7 @@ function App() {
               </p>
             </div>
             <br/>
-            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
               <Tabs variant='enclosed' style={{width: "1000px"}}>
                 <TabList>
                   <Tab>Zelf creëren</Tab>
