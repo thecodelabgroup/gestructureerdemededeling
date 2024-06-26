@@ -23,8 +23,8 @@ function App() {
           <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}}/>
           <div style={{ display: "flex", alignItems: "center", paddingTop: '100px', flexDirection: "column" }}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-              <Heading as='h1' size='3xl' noOfLines={1} style={{ paddingBottom: "30px", color: "#00044F" }}>Gestructureerde Mededeling.</Heading>
-              <p style={{ width: "1000px" }}>
+              <Heading as='h1' size='2xl' noOfLines={1} style={{ paddingBottom: "30px", color: "#00044F", fontFamily: 'Poppins, sans-serif' }}>Gestructureerde Mededeling.</Heading>
+              <p style={{ width: "1000px", color: "#00044F", fontFamily: 'Poppins, sans-serif' }}>
                 Een overschrijving met gestructureerde mededeling, vaak afgekort als OGM, is een term uit het Belgische financiële verkeer.
                 Deze mededeling wordt gebruikt voor de automatische verwerking van betalingen.
                 De mededeling bestaat uit drie groepen cijfers, gescheiden door schuine strepen. De eerste groep heeft drie cijfers, de tweede vier, en de derde vijf.
