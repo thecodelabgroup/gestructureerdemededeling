@@ -49,7 +49,6 @@ function HeaderContent() {
                     color='gray.400'
                     maxW='1100px'
                 >
-                    <Search />
                     <VersionSwitcher
                         width='auto'
                         flexShrink={0}
