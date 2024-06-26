@@ -14,8 +14,10 @@ import {
 } from '@chakra-ui/react'
 import Header from "./components/Header.tsx";
 import {CopyIcon} from "@chakra-ui/icons";
+import {useState} from "react";
 
 function App() {
+  const [checksum, setChecksum] = useState("99")
 
   const theme = extendTheme({
     components: {
@@ -43,8 +45,19 @@ function App() {
     },
   });
 
+  function calculateChecksum(number: string): string {
+    const numericValue = BigInt(number);
+    const remainder = Number(numericValue % 97n);
+    const checksum = 97 - remainder;
+
+    return (97 - (checksum === 97 ? 0 : checksum)).toString().padStart(2, '0');
+  }
+
+
   const pinInputOnChange = (value: string) => {
     console.log(value);
+    setChecksum(calculateChecksum(value));
+    console.log("Checksum: " + calculateChecksum(value));
   }
 
   return (
@@ -93,7 +106,7 @@ function App() {
                         <PinInputField/>
                         <PinInputField/>
                         <PinInputField/>
-                        <PinInput type='number' size="lg" placeholder="0" isDisabled defaultValue="00">
+                        <PinInput type='number' size="lg" placeholder="0" isDisabled value={checksum}>
                           <PinInputField/>
                           <PinInputField/>
                         </PinInput>
