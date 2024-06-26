@@ -46,7 +46,7 @@ function App() {
   });
 
   function calculateChecksum(number: string): string {
-    const numericValue = BigInt(number);
+    const numericValue = BigInt(number.slice(0, -1));
     const remainder = Number(numericValue % 97n);
     const checksum = 97 - remainder;
 
@@ -55,9 +55,7 @@ function App() {
 
 
   const pinInputOnChange = (value: string) => {
-    console.log(value);
     setChecksum(calculateChecksum(value));
-    console.log("Checksum: " + calculateChecksum(value));
   }
 
   return (
@@ -90,7 +88,7 @@ function App() {
                       Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) wordt automatisch berekend.
                     </p>
                     <HStack style={{ marginTop: "20px", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center", border: "solid 1px black", borderRadius: "5px", background: "#f8c9ba"}}>
-                      <PinInput type='number' size="lg" onChange={pinInputOnChange} placeholder="0">
+                      <PinInput type='number' size="lg" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
