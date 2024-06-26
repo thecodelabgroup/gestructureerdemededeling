@@ -17,7 +17,8 @@ import {CopyIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 
 function App() {
-  const [checksum, setChecksum] = useState("99")
+  const [checksum, setChecksum] = useState("00");
+  const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
 
   const theme = extendTheme({
     components: {
@@ -78,14 +79,14 @@ function App() {
             <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
               <Tabs variant='enclosed' style={{width: "1000px"}}>
                 <TabList>
-                  <Tab style={{ color: "#00044F" }}><b>Zelf creëren</b></Tab>
+                  <Tab><b>Zelf creëren</b></Tab>
                   <Tab><b>Automatisch genereren</b></Tab>
                   <Tab><b>Mededeling controleren</b></Tab>
                 </TabList>
                 <TabPanels>
                   <TabPanel>
                     <p style={{ fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
-                      Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) wordt automatisch berekend.
+                      Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.
                     </p>
                     <HStack style={{ marginTop: "20px", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center", border: "solid 1px black", borderRadius: "5px", background: "#f8c9ba"}}>
                       <PinInput type='number' size="lg" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
