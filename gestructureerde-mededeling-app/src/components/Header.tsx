@@ -18,7 +18,6 @@ import Logo from '../assets/logo.png'
 import VersionSwitcher from './VersionSwitcher.tsx'
 import { GithubIcon } from './icons/GithubIcon.tsx'
 import { DiscordIcon } from './icons/DiscordIcon.tsx'
-import Search from "./OmniSearch.tsx";
 
 function HeaderContent() {
     const mobileNav = useDisclosure()

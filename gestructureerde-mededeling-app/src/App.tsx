@@ -46,17 +46,31 @@ function App() {
     },
   });
 
+
+
   function calculateChecksum(number: string): string {
-    const numericValue = BigInt(number.slice(0, -1));
+    const numericValue = number.length > 9 ? BigInt(number.slice(0, -1)) : BigInt(number);
     const remainder = Number(numericValue % 97n);
     const checksum = 97 - remainder;
 
     return (97 - (checksum === 97 ? 0 : checksum)).toString().padStart(2, '0');
   }
 
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(mededeling)
+        .then(() => {
+          console.log("Text copied to clipboard");
+        })
+        .catch(err => {
+          console.error("Failed to copy text: ", err);
+        });
+  }
 
   const pinInputOnChange = (value: string) => {
     setChecksum(calculateChecksum(value));
+    console.log(value.slice(0, -1));
+    console.log(checksum);
+    setMededeling(`+++${value.slice(0, -1).slice(0, 3)}/${value.slice(0, -1).slice(3, 7)}/${value.slice(0, -1).slice(7)}${checksum}+++`);
   }
 
   return (
@@ -116,7 +130,7 @@ function App() {
                     </HStack>
                     <br/>
                     <div style={{display: "flex", justifyContent: "flex-end"}}>
-                      <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid'>
+                      <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid' onClick={handleCopyClick}>
                         Mededeling kopiëren
                       </Button>
                     </div>
