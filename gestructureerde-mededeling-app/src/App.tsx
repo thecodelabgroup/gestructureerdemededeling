@@ -15,6 +15,9 @@ import {
 import Header from "./components/Header.tsx";
 import {CopyIcon} from "@chakra-ui/icons";
 import {useState} from "react";
+import Footer from "./components/Footer.tsx";
+import { useToast } from '@chakra-ui/react'
+import {css} from "@emotion/react";
 
 function App() {
   const [checksum, setChecksum] = useState("00");
@@ -32,21 +35,32 @@ function App() {
           },
         },
       },
-      PinInput: {
+      PinInputField: {
         baseStyle: {
-          field: {
-            _focus: {
-              color: '#3902BF',
-              borderColor: 'red',
-              boxShadow: '0 0 0 1px red',
-            },
-          },
+            field: {
+              color: '#00044F',
+              borderColor: '#00044F',
+            }
         },
       },
     },
   });
 
+  const customPinInputFieldStyles = {
+    border: '2px solid #00044F',
+    _hover: {
+      borderColor: '#3902BF',
+    },
+    _focus: {
+      borderColor: '#3902BF',
+      boxShadow: '0 0 0 1px #3902BF',
+    },
+    _active: {
+      borderColor: '#3902BF',
+    },
+  };
 
+  const toast = useToast();
 
   function calculateChecksum(number: string): string {
     const numericValue = number.length > 9 ? BigInt(number.slice(0, -1)) : BigInt(number);
@@ -64,6 +78,13 @@ function App() {
         .catch(err => {
           console.error("Failed to copy text: ", err);
         });
+
+    toast({
+      title: 'Mededeling gekopieerd.',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
   }
 
   const pinInputOnChange = (value: string) => {
@@ -102,26 +123,26 @@ function App() {
                     <p style={{ fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
                       Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.
                     </p>
-                    <HStack style={{ marginTop: "20px", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center", border: "solid 1px black", borderRadius: "5px", background: "#f8c9ba"}}>
-                      <PinInput type='number' size="lg" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
+                    <HStack style={{ marginTop: "20px", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "var(--chakra-radii-md)", background: "#f8c9ba"}}>
+                      <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                        <PinInputField/>
-                        <PinInputField/>
-                        <PinInputField/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                        <PinInputField/>
-                        <PinInputField/>
-                        <PinInputField/>
-                        <PinInputField/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                        <PinInputField/>
-                        <PinInputField/>
-                        <PinInputField/>
-                        <PinInput type='number' size="lg" placeholder="0" isDisabled value={checksum}>
-                          <PinInputField/>
-                          <PinInputField/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInput type='number' size="md" placeholder="0" isDisabled value={checksum}>
+                          <PinInputField sx={customPinInputFieldStyles}/>
+                          <PinInputField sx={customPinInputFieldStyles}/>
                         </PinInput>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                         <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
@@ -141,9 +162,8 @@ function App() {
                 </TabPanels>
               </Tabs>
             </div>
-            <br/>
-            <p>Copyright - Codelab Group</p>
           </div>
+          <Footer />
         </>
       </ChakraProvider>
   )
