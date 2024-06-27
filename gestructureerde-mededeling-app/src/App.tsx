@@ -3,7 +3,7 @@ import {
   Button,
   ChakraProvider, extendTheme,
   Heading,
-  HStack, Kbd,
+  HStack,
   PinInput,
   PinInputField,
   Tab,
