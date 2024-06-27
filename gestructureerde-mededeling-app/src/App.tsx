@@ -17,7 +17,6 @@ import {CopyIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 import Footer from "./components/Footer.tsx";
 import { useToast } from '@chakra-ui/react'
-import {css} from "@emotion/react";
 
 function App() {
   const [checksum, setChecksum] = useState("00");
