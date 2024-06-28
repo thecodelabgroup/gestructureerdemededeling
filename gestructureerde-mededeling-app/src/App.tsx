@@ -88,8 +88,6 @@ function App() {
 
   const pinInputOnChange = (value: string) => {
     setChecksum(calculateChecksum(value));
-    console.log(value.slice(0, -1));
-    console.log(checksum);
     setMededeling(`+++${value.slice(0, -1).slice(0, 3)}/${value.slice(0, -1).slice(3, 7)}/${value.slice(0, -1).slice(7)}${checksum}+++`);
   }
 
