@@ -13,7 +13,7 @@ import {
   Tabs
 } from '@chakra-ui/react'
 import Header from "./components/Header.tsx";
-import {CopyIcon} from "@chakra-ui/icons";
+import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 import Footer from "./components/Footer.tsx";
 import { useToast } from '@chakra-ui/react'
@@ -86,6 +86,11 @@ function App() {
     })
   }
 
+  const handleResetClick = () => {
+    window.location.reload();
+  };
+
+
   const pinInputOnChange = (value: string) => {
     setChecksum(calculateChecksum(value));
     setMededeling(`+++${value.slice(0, -1).slice(0, 3)}/${value.slice(0, -1).slice(3, 7)}/${value.slice(0, -1).slice(7)}${checksum}+++`);
@@ -147,7 +152,10 @@ function App() {
                     </HStack>
                     <br/>
                     <div style={{display: "flex", justifyContent: "flex-end"}}>
-                      <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid' onClick={handleCopyClick}>
+                      <Button leftIcon={<RepeatIcon/>} style={{border: "#00044F 2px solid", color: "#00044F", marginRight: "15px", fontFamily: 'Poppins, sans-serif' }} variant='outline' onClick={handleResetClick}>
+                        Reset mededeling
+                      </Button>
+                      <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white", fontFamily: 'Poppins, sans-serif'}} variant='solid' onClick={handleCopyClick}>
                         Mededeling kopiëren
                       </Button>
                     </div>
