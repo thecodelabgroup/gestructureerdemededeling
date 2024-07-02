@@ -1,9 +1,6 @@
 import './App.css'
 import {
   ChakraProvider, extendTheme,
-  HStack,
-  PinInput,
-  PinInputField,
   Tab,
   TabList,
   TabPanel,
