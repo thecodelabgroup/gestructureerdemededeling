@@ -54,7 +54,7 @@ export const CreateStatementTab = () => {
 
     return (
         <>
-            <p>
+            <p style={{fontFamily: 'Poppins, sans-serif', color: "#00044F"}}>
                 Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.
             </p>
             <HStack style={{
