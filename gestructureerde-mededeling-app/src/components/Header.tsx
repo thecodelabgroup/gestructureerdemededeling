@@ -18,6 +18,7 @@ import Logo from '../assets/logo.png'
 import VersionSwitcher from './VersionSwitcher.tsx'
 import { GithubIcon } from './icons/GithubIcon.tsx'
 import { DiscordIcon } from './icons/DiscordIcon.tsx'
+import SponsorButton from "./SponsorButton.tsx";
 
 function HeaderContent() {
     const mobileNav = useDisclosure()
@@ -109,6 +110,7 @@ function HeaderContent() {
                             onClick={toggleMode}
                             icon={<SwitchIcon />}
                         />
+                        <SponsorButton ml='5' />
                     </HStack>
                 </Flex>
             </Flex>

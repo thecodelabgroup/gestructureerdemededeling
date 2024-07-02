@@ -1,7 +1,6 @@
 import './App.css'
 import {
   ChakraProvider, extendTheme,
-  Heading,
   HStack,
   PinInput,
   PinInputField,
@@ -13,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
-import {CreateStatementTab} from "./components/CreateStatementTab.tsx";
+import {StatementCreateTab} from "./components/StatementCreateTab.tsx";
 import {StatementLandingText} from "./components/StatementLandingText.tsx";
 
 function App() {
@@ -57,7 +56,7 @@ function App() {
                 </TabList>
                 <TabPanels>
                   <TabPanel>
-                    <CreateStatementTab />
+                    <StatementCreateTab />
                   </TabPanel>
                   <TabPanel>
                     <p style={{fontFamily: 'Poppins, sans-serif', color: "#00044F"}}>

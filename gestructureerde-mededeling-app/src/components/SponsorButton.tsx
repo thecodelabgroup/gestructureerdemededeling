@@ -1,5 +1,5 @@
 import { Box, BoxProps, Icon } from '@chakra-ui/react'
-import {FaUserPlus} from 'react-icons/fa'
+import {FaHeart} from 'react-icons/fa'
 
 const SponsorButton = ({ onClick, ...props }: BoxProps & { onClick?: () => void }) => (
     <Box
@@ -30,11 +30,11 @@ const SponsorButton = ({ onClick, ...props }: BoxProps & { onClick?: () => void 
         }}
         {...props}
     >
-        <Icon as={FaUserPlus} w='4' h='4' color='#00044F' mr='2' />
+        <Icon as={FaHeart} w='4' h='4' color='red.500' mr='2' />
         <Box as='strong' lineHeight='inherit' fontWeight='semibold'>
-            Add Customer
+            Sponsor
         </Box>
     </Box>
 )
 
-export default SponsorButton;
+export default SponsorButton

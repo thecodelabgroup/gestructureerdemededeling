@@ -16,7 +16,7 @@ const customPinInputFieldStyles = {
     },
 };
 
-export const CreateStatementTab = () => {
+export const StatementCreateTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
     const [checksum, setChecksum] = useState("00");
     const toast = useToast();
