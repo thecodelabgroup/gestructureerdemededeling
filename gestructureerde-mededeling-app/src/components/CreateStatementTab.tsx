@@ -19,7 +19,6 @@ const customPinInputFieldStyles = {
 export const CreateStatementTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
     const [checksum, setChecksum] = useState("00");
-
     const toast = useToast();
 
     function calculateChecksum(number: string): string {
@@ -38,18 +37,21 @@ export const CreateStatementTab = () => {
     const handleCopyClick = () => {
         navigator.clipboard.writeText(mededeling)
             .then(() => {
-                console.log("Text copied to clipboard");
+                toast({
+                    title: 'Mededeling gekopieerd.',
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                })
             })
-            .catch(err => {
-                console.error("Failed to copy text: ", err);
+            .catch(() => {
+                toast({
+                    title: 'Error.',
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                })
             });
-
-        toast({
-            title: 'Mededeling gekopieerd.',
-            status: 'success',
-            duration: 9000,
-            isClosable: true,
-        })
     }
 
     return (
