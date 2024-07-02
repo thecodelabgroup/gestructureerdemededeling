@@ -1,12 +1,61 @@
-import {Button, HStack, PinInput, PinInputField} from "@chakra-ui/react";
+import {Button, HStack, PinInput, PinInputField, useToast} from "@chakra-ui/react";
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
+import {useState} from "react";
+
+const customPinInputFieldStyles = {
+    border: '2px solid #00044F',
+    _hover: {
+        borderColor: '#3902BF',
+    },
+    _focus: {
+        borderColor: '#3902BF',
+        boxShadow: '0 0 0 1px #3902BF',
+    },
+    _active: {
+        borderColor: '#3902BF',
+    },
+};
 
 export const CreateStatementTab = () => {
+    const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
+    const [checksum, setChecksum] = useState("00");
+
+    const toast = useToast();
+
+    function calculateChecksum(number: string): string {
+        const numericValue = number.length > 9 ? BigInt(number.slice(0, -1)) : BigInt(number);
+        const remainder = Number(numericValue % 97n);
+        const checksum = 97 - remainder;
+
+        return (97 - (checksum === 97 ? 0 : checksum)).toString().padStart(2, '0');
+    }
+
+    const pinInputOnChange = (value: string) => {
+        setChecksum(calculateChecksum(value));
+        setMededeling(`+++${value.slice(0, -1).slice(0, 3)}/${value.slice(0, -1).slice(3, 7)}/${value.slice(0, -1).slice(7)}${checksum}+++`);
+    }
+
+    const handleCopyClick = () => {
+        navigator.clipboard.writeText(mededeling)
+            .then(() => {
+                console.log("Text copied to clipboard");
+            })
+            .catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
+
+        toast({
+            title: 'Mededeling gekopieerd.',
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+        })
+    }
+
     return (
         <>
-            <p style={{fontFamily: 'Poppins, sans-serif', color: "#00044F"}}>
-                Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal)
-                worden automatisch berekend.
+            <p>
+                Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.
             </p>
             <HStack style={{
                 marginTop: "20px",
@@ -50,7 +99,7 @@ export const CreateStatementTab = () => {
                     color: "#00044F",
                     marginRight: "15px",
                     fontFamily: 'Poppins, sans-serif'
-                }} variant='outline' onClick={handleResetClick}>
+                }} variant='outline'>
                     Reset mededeling
                 </Button>
                 <Button leftIcon={<CopyIcon/>}
