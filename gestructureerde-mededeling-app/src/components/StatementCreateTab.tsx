@@ -1,6 +1,7 @@
 import {Button, HStack, PinInput, PinInputField, useToast} from "@chakra-ui/react";
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
+import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
 
 const customPinInputFieldStyles = {
     border: '2px solid #00044F',
@@ -20,14 +21,6 @@ export const StatementCreateTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
     const [checksum, setChecksum] = useState("00");
     const toast = useToast();
-
-    function calculateChecksum(number: string): string {
-        const numericValue = number.length > 9 ? BigInt(number.slice(0, -1)) : BigInt(number);
-        const remainder = Number(numericValue % 97n);
-        const checksum = 97 - remainder;
-
-        return (97 - (checksum === 97 ? 0 : checksum)).toString().padStart(2, '0');
-    }
 
     const pinInputOnChange = (value: string) => {
         setChecksum(calculateChecksum(value));
