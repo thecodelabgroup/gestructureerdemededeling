@@ -108,7 +108,7 @@ function App() {
                 De mededeling bestaat uit drie groepen cijfers, gescheiden door schuine strepen. De eerste groep heeft drie cijfers, de tweede vier, en de derde vijf.
                 De mededeling begint en eindigt met drie plustekens (+++).
                 <br/><br/>
-                Met deze tool kun je eenvoudig je gestructureerde mededelingen creëren, laten genereren en controleren.
+                Met onze tool kun je eenvoudig je gestructureerde mededelingen creëren, laten genereren en controleren.
               </p>
             </div>
             <br/>
