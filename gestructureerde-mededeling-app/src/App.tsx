@@ -12,10 +12,9 @@ import {
   Tabs
 } from '@chakra-ui/react'
 import Header from "./components/Header.tsx";
-import {useState} from "react";
 import Footer from "./components/Footer.tsx";
-import { useToast } from '@chakra-ui/react'
 import {CreateStatementTab} from "./components/CreateStatementTab.tsx";
+import {StatementLandingText} from "./components/StatementLandingText.tsx";
 
 function App() {
   const theme = extendTheme({
@@ -47,16 +46,7 @@ function App() {
         <>
           <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}}/>
           <div style={{ display: "flex", alignItems: "center", paddingTop: '50px', flexDirection: "column" }}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-              <Heading as='h1' size='2xl' noOfLines={1} style={{ paddingBottom: "30px", color: "#00044F", fontFamily: 'Poppins, sans-serif' }}>Gestructureerde Mededeling.</Heading>
-              <p style={{ width: "1000px", color: "#00044F", fontFamily: 'Poppins, sans-serif' }}>
-                Een overschrijving met gestructureerde mededeling wordt gebruikt voor de automatische verwerking van betalingen.
-                De mededeling bestaat uit drie groepen cijfers, gescheiden door schuine strepen. De eerste groep heeft drie cijfers, de tweede vier, en de derde vijf.
-                De mededeling begint en eindigt met drie plustekens (+++).
-                <br/><br/>
-                Met onze tool kun je eenvoudig je gestructureerde mededelingen creëren, laten genereren en controleren.
-              </p>
-            </div>
+            <StatementLandingText />
             <br/>
             <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
               <Tabs variant='enclosed' style={{width: "1000px"}}>
