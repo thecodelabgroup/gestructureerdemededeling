@@ -1,6 +1,6 @@
 import {Button, HStack, PinInput, PinInputField, useToast} from "@chakra-ui/react";
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
-import {useState} from "react";
+import {ElementType, useState} from "react";
 import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
 import {statementTransformer} from "../utils/StatementTransformer.tsx";
 import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
@@ -25,6 +25,10 @@ export const StatementCreateTab = () => {
             });
     }
 
+    const generateStatementSegment = (count: number, Element: ElementType, props = {}) => (
+        Array.from({ length: count }).map((_, index) => <Element key={index} {...props} />)
+    );
+
     return (
         <>
             <p>
@@ -32,28 +36,18 @@ export const StatementCreateTab = () => {
             </p>
             <HStack className="statement-container">
                 <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
-                    <PinInputField sx={statementPinInputStyles}/>
+                    {generateStatementSegment(3, 'p', { className: 'statement-pin', children: '+' })}
+                    {generateStatementSegment(3, PinInputField, { sx: statementPinInputStyles })}
+                    {generateStatementSegment(1, 'p', { className: 'statement-pin', children: '/' })}
+                    {generateStatementSegment(4, PinInputField, { sx: statementPinInputStyles })}
+                    {generateStatementSegment(1, 'p', { className: 'statement-pin', children: '/' })}
+                    {generateStatementSegment(3, PinInputField, { sx: statementPinInputStyles })}
                     <PinInput type='number' size="md" placeholder="0" isDisabled value={checksum}>
-                        <PinInputField sx={statementPinInputStyles}/>
-                        <PinInputField sx={statementPinInputStyles}/>
+                        {generateStatementSegment(2, PinInputField, { sx: statementPinInputStyles })}
                     </PinInput>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
+                    {Array.from({ length: 3 }).map((_, index) => (
+                        <p className="statement-pin" key={index}>+</p>
+                    ))}
                 </PinInput>
             </HStack>
             <br/>

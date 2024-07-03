@@ -9,5 +9,5 @@ export const statementPinInputStyles = {
     },
     _active: {
         borderColor: '#3902BF',
-    },
+    }
 };

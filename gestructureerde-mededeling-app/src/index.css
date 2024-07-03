@@ -15,3 +15,8 @@ p {
     border-radius: var(--chakra-radii-md);
     background: #f8c9ba;
 }
+
+.statement-pin {
+    font-size: 28px;
+    font-weight: 300;
+}
