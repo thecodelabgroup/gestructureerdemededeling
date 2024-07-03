@@ -13,7 +13,7 @@ export const StatementGenerateTab = () => {
     const copyStatementToClipboard = useCopyStatementToClipboard();
     const { t } = useTranslation();
 
-    function generateNewStatement() {
+    function generateStatement() {
         setStatement(generateRandomStatement());
     }
 
@@ -24,7 +24,7 @@ export const StatementGenerateTab = () => {
     return (
         <>
             <p>
-                De onderstaande gestructureerde mededeling wordt automatisch gegenereerd door middel van een willekeurig gekozen cijfercombinatie.
+                {t('generate-statement-main-message')}
             </p>
             <HStack className="statement-container">
                 <PinInput type='number' size="md" placeholder="0" value={statement} isDisabled>
@@ -39,9 +39,8 @@ export const StatementGenerateTab = () => {
             </HStack>
             <br/>
             <div className="statement-button-container">
-                <Button leftIcon={<RepeatIcon/>} className="statement-reset-button"
-                        style={{border: "#00044F 2px solid"}} variant='outline' onClick={generateNewStatement}>
-                    Genereer mededeling
+                <Button leftIcon={<RepeatIcon/>} className="statement-reset-button" style={{border: "#00044F 2px solid"}} variant='outline' onClick={generateStatement}>
+                    {t('generate-statement-generate-button-label')}
                 </Button>
                 <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid' onClick={copyStatementClick}>
                     {t('common-statement-copy-button-label')}

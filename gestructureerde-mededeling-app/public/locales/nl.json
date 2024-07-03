@@ -3,5 +3,7 @@
   "common-statement-copy-error-message": "Er is een fout opgetreden bij het kopiëren van de mededeling.",
   "common-statement-copy-button-label": "Mededeling kopiëren",
   "common-statement-reset-button-label": "Reset mededeling",
-  "create-statement-main-message": "Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend."
+  "create-statement-main-message": "Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.",
+  "generate-statement-main-message": "De onderstaande gestructureerde mededeling wordt automatisch gegenereerd door middel van een willekeurig gekozen cijfercombinatie.",
+  "generate-statement-generate-button-label": "Genereer mededeling"
 }
