@@ -1,4 +1,4 @@
-import {Button, HStack, PinInput, PinInputField, useToast} from "@chakra-ui/react";
+import {Button, HStack, PinInput, PinInputField} from "@chakra-ui/react";
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
@@ -6,26 +6,21 @@ import {statementTransformer} from "../utils/StatementTransformer.tsx";
 import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
 import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
 import {useTranslation} from "react-i18next";
+import {useCopyStatementToClipboard} from "../hooks/UseCopyStatementToClipboard.tsx";
 
 export const StatementCreateTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
     const [checksum, setChecksum] = useState("00");
+    const copyStatementToClipboard = useCopyStatementToClipboard();
     const { t } = useTranslation();
-    const toast = useToast();
 
     const pinInputOnChange = (value: string) => {
         setChecksum(calculateChecksum(value.slice(0, -1)));
         setMededeling(statementTransformer(value.slice(0, -1)));
     }
 
-    const handleCopyClick = () => {
-        navigator.clipboard.writeText(mededeling)
-            .then(() => {
-                toast({ title: t('common-statement-copy-success-message'), status: 'success', duration: 2500, isClosable: true })
-            })
-            .catch(() => {
-                toast({ title: t('common-statement-copy-error-message'), status: 'error', duration: 2500, isClosable: true })
-            });
+    const copyStatementClick = () => {
+        copyStatementToClipboard(mededeling);
     }
 
     return (
@@ -52,7 +47,7 @@ export const StatementCreateTab = () => {
                 <Button leftIcon={<RepeatIcon/>} className="statement-reset-button" style={{ border: "#00044F 2px solid" }} variant='outline'>
                     {t('common-statement-reset-button-label')}
                 </Button>
-                <Button leftIcon={<CopyIcon/>} style={{ background: "#00044F", color: "white" }} variant='solid' onClick={handleCopyClick}>
+                <Button leftIcon={<CopyIcon/>} style={{ background: "#00044F", color: "white" }} variant='solid' onClick={copyStatementClick}>
                     {t('common-statement-copy-button-label')}
                 </Button>
             </div>
