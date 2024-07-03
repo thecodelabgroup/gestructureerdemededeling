@@ -1,9 +1,10 @@
 import {Button, HStack, PinInput, PinInputField, useToast} from "@chakra-ui/react";
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
-import {ElementType, useState} from "react";
+import {useState} from "react";
 import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
 import {statementTransformer} from "../utils/StatementTransformer.tsx";
 import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
+import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
 
 export const StatementCreateTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
@@ -24,10 +25,6 @@ export const StatementCreateTab = () => {
                 toast({ title: 'Error.', status: 'error', duration: 9000, isClosable: true })
             });
     }
-
-    const generateStatementSegment = (count: number, Element: ElementType, props = {}) => (
-        Array.from({ length: count }).map((_, index) => <Element key={index} {...props} />)
-    );
 
     return (
         <>
