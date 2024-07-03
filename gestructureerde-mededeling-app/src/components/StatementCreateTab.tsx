@@ -2,6 +2,7 @@ import {Button, HStack, PinInput, PinInputField, useToast} from "@chakra-ui/reac
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
+import {statementTransformer} from "../utils/StatementTransformer.tsx";
 
 const customPinInputFieldStyles = {
     border: '2px solid #00044F',
@@ -23,8 +24,8 @@ export const StatementCreateTab = () => {
     const toast = useToast();
 
     const pinInputOnChange = (value: string) => {
-        setChecksum(calculateChecksum(value));
-        setMededeling(`+++${value.slice(0, -1).slice(0, 3)}/${value.slice(0, -1).slice(3, 7)}/${value.slice(0, -1).slice(7)}${checksum}+++`);
+        setChecksum(calculateChecksum(value.slice(0, -1)));
+        setMededeling(statementTransformer(value.slice(0, -1)));
     }
 
     const handleCopyClick = () => {
