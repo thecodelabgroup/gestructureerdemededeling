@@ -3,20 +3,7 @@ import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
 import {statementTransformer} from "../utils/StatementTransformer.tsx";
-
-const customPinInputFieldStyles = {
-    border: '2px solid #00044F',
-    _hover: {
-        borderColor: '#3902BF',
-    },
-    _focus: {
-        borderColor: '#3902BF',
-        boxShadow: '0 0 0 1px #3902BF',
-    },
-    _active: {
-        borderColor: '#3902BF',
-    },
-};
+import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
 
 export const StatementCreateTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
@@ -48,21 +35,21 @@ export const StatementCreateTab = () => {
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
-                    <PinInputField sx={customPinInputFieldStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
+                    <PinInputField sx={statementPinInputStyles}/>
                     <PinInput type='number' size="md" placeholder="0" isDisabled value={checksum}>
-                        <PinInputField sx={customPinInputFieldStyles}/>
-                        <PinInputField sx={customPinInputFieldStyles}/>
+                        <PinInputField sx={statementPinInputStyles}/>
+                        <PinInputField sx={statementPinInputStyles}/>
                     </PinInput>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
