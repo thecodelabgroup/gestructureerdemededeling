@@ -21,17 +21,17 @@ export const StatementCreateTab = () => {
     const handleCopyClick = () => {
         navigator.clipboard.writeText(mededeling)
             .then(() => {
-                toast({ title: 'Mededeling gekopieerd.', status: 'success', duration: 9000, isClosable: true })
+                toast({ title: t('common-statement-copy-success-message'), status: 'success', duration: 2500, isClosable: true })
             })
             .catch(() => {
-                toast({ title: 'Error.', status: 'error', duration: 9000, isClosable: true })
+                toast({ title: t('common-statement-copy-error-message'), status: 'error', duration: 2500, isClosable: true })
             });
     }
 
     return (
         <>
             <p>
-                {t('statement-create.main-message')}
+                {t('create-statement-main-message')}
             </p>
             <HStack className="statement-container">
                 <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
@@ -49,12 +49,11 @@ export const StatementCreateTab = () => {
             </HStack>
             <br/>
             <div className="statement-button-container">
-                //TODO: fix button styles
-                <Button leftIcon={<RepeatIcon/>} className="statement-reset-button" variant='outline'>
-                    Reset mededeling
+                <Button leftIcon={<RepeatIcon/>} className="statement-reset-button" style={{ border: "#00044F 2px solid" }} variant='outline'>
+                    {t('common-statement-reset-button-label')}
                 </Button>
-                <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid' onClick={handleCopyClick}>
-                    Mededeling kopiëren
+                <Button leftIcon={<CopyIcon/>} style={{ background: "#00044F", color: "white" }} variant='solid' onClick={handleCopyClick}>
+                    {t('common-statement-copy-button-label')}
                 </Button>
             </div>
         </>
