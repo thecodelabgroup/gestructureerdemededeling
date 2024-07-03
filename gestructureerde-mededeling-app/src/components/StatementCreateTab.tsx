@@ -31,20 +31,10 @@ export const StatementCreateTab = () => {
     const handleCopyClick = () => {
         navigator.clipboard.writeText(mededeling)
             .then(() => {
-                toast({
-                    title: 'Mededeling gekopieerd.',
-                    status: 'success',
-                    duration: 9000,
-                    isClosable: true,
-                })
+                toast({ title: 'Mededeling gekopieerd.', status: 'success', duration: 9000, isClosable: true })
             })
             .catch(() => {
-                toast({
-                    title: 'Error.',
-                    status: 'error',
-                    duration: 9000,
-                    isClosable: true,
-                })
+                toast({ title: 'Error.', status: 'error', duration: 9000, isClosable: true })
             });
     }
 
