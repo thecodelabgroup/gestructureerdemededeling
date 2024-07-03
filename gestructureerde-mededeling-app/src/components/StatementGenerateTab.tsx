@@ -1,45 +1,41 @@
-import {HStack, PinInput, PinInputField} from "@chakra-ui/react";
+import {Button, HStack, PinInput, PinInputField} from "@chakra-ui/react";
+import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
+import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
+import {generateRandomStatement} from "../utils/RandomStatementGenerator.tsx";
+import {CopyIcon} from "@chakra-ui/icons";
+import {useState} from "react";
 
 export const StatementGenerateTab = () => {
+    const [statement, setStatement] = useState(generateRandomStatement());
+
+    function hello() {
+        setStatement(generateRandomStatement());
+        console.log(statement);
+    }
+
     return (
         <>
             <p style={{fontFamily: 'Poppins, sans-serif', color: "#00044F"}}>
                 Onderstaande mededeling werd automatisch gegenereerd met een willekeurige cijfercombinatie.
             </p>
-            <HStack style={{
-                marginTop: "20px",
-                padding: "20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "var(--chakra-radii-md)",
-                background: "#f8c9ba"
-            }}>
-                <PinInput type='number' size="md" placeholder="0" defaultValue="00000000000">
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>/</p>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <PinInputField/>
-                    <PinInput type='number' size="md" placeholder="0" isDisabled>
-                        <PinInputField/>
-                        <PinInputField/>
-                    </PinInput>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
-                    <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
+            <HStack className="statement-container">
+                <PinInput type='number' size="md" placeholder="0" value={statement}>
+                    {generateStatementSegment(3, 'p', {className: 'statement-pin', children: '+'})}
+                    {generateStatementSegment(3, PinInputField, {sx: statementPinInputStyles})}
+                    {generateStatementSegment(1, 'p', {className: 'statement-pin', children: '/'})}
+                    {generateStatementSegment(4, PinInputField, {sx: statementPinInputStyles})}
+                    {generateStatementSegment(1, 'p', {className: 'statement-pin', children: '/'})}
+                    {generateStatementSegment(5, PinInputField, {sx: statementPinInputStyles})}
+                    {generateStatementSegment(3, 'p', {className: 'statement-pin', children: '+'})}
                 </PinInput>
             </HStack>
+            <br/>
+            <div className="statement-button-container">
+                <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid'
+                        onClick={hello}>
+                    Generate new statement
+                </Button>
+            </div>
         </>
     )
 }
