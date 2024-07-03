@@ -1,0 +1,17 @@
+* {
+    font-family: Poppins, "sans-serif";
+}
+
+p {
+    color: #00044F;
+}
+
+.statement-container {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--chakra-radii-md);
+    background: #f8c9ba;
+}

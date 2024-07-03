@@ -40,20 +40,11 @@ export const StatementCreateTab = () => {
 
     return (
         <>
-            <p style={{fontFamily: 'Poppins, sans-serif', color: "#00044F"}}>
+            <p>
                 Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.
             </p>
-            <HStack style={{
-                marginTop: "20px",
-                padding: "20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "var(--chakra-radii-md)",
-                background: "#f8c9ba"
-            }}>
-                <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0"
-                          defaultValue="00000000000">
+            <HStack className="statement-container">
+                <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
                     <p style={{fontSize: '28px', fontWeight: '300'}}>+</p>
