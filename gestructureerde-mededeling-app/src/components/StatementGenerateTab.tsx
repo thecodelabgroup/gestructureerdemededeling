@@ -2,24 +2,32 @@ import {Button, HStack, PinInput, PinInputField} from "@chakra-ui/react";
 import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
 import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
 import {generateRandomStatement} from "../utils/RandomStatementGenerator.tsx";
-import {CopyIcon} from "@chakra-ui/icons";
+import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
+import {useCopyStatementToClipboard} from "../hooks/UseCopyStatementToClipboard.tsx";
+import {statementTransformer} from "../utils/StatementTransformer.tsx";
 
 export const StatementGenerateTab = () => {
     const [statement, setStatement] = useState(generateRandomStatement());
+    const copyStatementToClipboard = useCopyStatementToClipboard();
+    const { t } = useTranslation();
 
-    function hello() {
+    function generateNewStatement() {
         setStatement(generateRandomStatement());
-        console.log(statement);
+    }
+
+    const copyStatementClick = () => {
+        copyStatementToClipboard(statementTransformer(statement.slice(0, -2)));
     }
 
     return (
         <>
-            <p style={{fontFamily: 'Poppins, sans-serif', color: "#00044F"}}>
-                Onderstaande mededeling werd automatisch gegenereerd met een willekeurige cijfercombinatie.
+            <p>
+                De onderstaande gestructureerde mededeling wordt automatisch gegenereerd door middel van een willekeurig gekozen cijfercombinatie.
             </p>
             <HStack className="statement-container">
-                <PinInput type='number' size="md" placeholder="0" value={statement}>
+                <PinInput type='number' size="md" placeholder="0" value={statement} isDisabled>
                     {generateStatementSegment(3, 'p', {className: 'statement-pin', children: '+'})}
                     {generateStatementSegment(3, PinInputField, {sx: statementPinInputStyles})}
                     {generateStatementSegment(1, 'p', {className: 'statement-pin', children: '/'})}
@@ -31,9 +39,12 @@ export const StatementGenerateTab = () => {
             </HStack>
             <br/>
             <div className="statement-button-container">
-                <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid'
-                        onClick={hello}>
-                    Generate new statement
+                <Button leftIcon={<RepeatIcon/>} className="statement-reset-button"
+                        style={{border: "#00044F 2px solid"}} variant='outline' onClick={generateNewStatement}>
+                    Genereer mededeling
+                </Button>
+                <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid' onClick={copyStatementClick}>
+                    {t('common-statement-copy-button-label')}
                 </Button>
             </div>
         </>
