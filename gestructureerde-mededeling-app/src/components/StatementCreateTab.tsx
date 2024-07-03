@@ -5,10 +5,12 @@ import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
 import {statementTransformer} from "../utils/StatementTransformer.tsx";
 import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
 import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
+import {useTranslation} from "react-i18next";
 
 export const StatementCreateTab = () => {
     const [mededeling, setMededeling] = useState("+++000/0000/00000+++");
     const [checksum, setChecksum] = useState("00");
+    const { t } = useTranslation();
     const toast = useToast();
 
     const pinInputOnChange = (value: string) => {
@@ -29,7 +31,7 @@ export const StatementCreateTab = () => {
     return (
         <>
             <p>
-                Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.
+                {t('statement-create.main-message')}
             </p>
             <HStack className="statement-container">
                 <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0" defaultValue="00000000000">
@@ -47,6 +49,7 @@ export const StatementCreateTab = () => {
             </HStack>
             <br/>
             <div className="statement-button-container">
+                //TODO: fix button styles
                 <Button leftIcon={<RepeatIcon/>} className="statement-reset-button" variant='outline'>
                     Reset mededeling
                 </Button>

@@ -1,0 +1,6 @@
+{
+  "statement-create":
+  {
+    "main-message": "Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend."
+  }
+}

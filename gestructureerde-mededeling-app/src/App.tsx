@@ -12,6 +12,7 @@ import Footer from "./components/Footer.tsx";
 import {StatementCreateTab} from "./components/StatementCreateTab.tsx";
 import {StatementLandingText} from "./components/StatementLandingText.tsx";
 import {StatementGenerateTab} from "./components/StatementGenerateTab.tsx";
+import './i18n';
 
 function App() {
   const theme = extendTheme({
