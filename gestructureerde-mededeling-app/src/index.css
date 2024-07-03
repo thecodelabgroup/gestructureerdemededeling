@@ -16,7 +16,23 @@ p {
     background: #f8c9ba;
 }
 
+.statement-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .statement-pin {
     font-size: 28px;
     font-weight: 300;
+}
+
+.statement-reset-button {
+    border: #00044F 2px solid;
+    color: #00044F;
+    margin-right: 15px;
+}
+
+.statement-copy-button {
+    background: #00044F;
+    color: white;
 }

@@ -42,24 +42,15 @@ export const StatementCreateTab = () => {
                     <PinInput type='number' size="md" placeholder="0" isDisabled value={checksum}>
                         {generateStatementSegment(2, PinInputField, { sx: statementPinInputStyles })}
                     </PinInput>
-                    {Array.from({ length: 3 }).map((_, index) => (
-                        <p className="statement-pin" key={index}>+</p>
-                    ))}
+                    {generateStatementSegment(3, 'p', { className: 'statement-pin', children: '+' })}
                 </PinInput>
             </HStack>
             <br/>
-            <div style={{display: "flex", justifyContent: "flex-end"}}>
-                <Button leftIcon={<RepeatIcon/>} style={{
-                    border: "#00044F 2px solid",
-                    color: "#00044F",
-                    marginRight: "15px",
-                    fontFamily: 'Poppins, sans-serif'
-                }} variant='outline'>
+            <div className="statement-button-container">
+                <Button leftIcon={<RepeatIcon/>} className="statement-reset-button" variant='outline'>
                     Reset mededeling
                 </Button>
-                <Button leftIcon={<CopyIcon/>}
-                        style={{background: "#00044F", color: "white", fontFamily: 'Poppins, sans-serif'}}
-                        variant='solid' onClick={handleCopyClick}>
+                <Button leftIcon={<CopyIcon/>} style={{background: "#00044F", color: "white"}} variant='solid' onClick={handleCopyClick}>
                     Mededeling kopiëren
                 </Button>
             </div>
