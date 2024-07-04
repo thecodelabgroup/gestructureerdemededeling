@@ -1,6 +1,6 @@
 import './App.css'
 import {
-  ChakraProvider, extendTheme,
+  ChakraProvider,
   Tab,
   TabList,
   TabPanels,
@@ -13,34 +13,14 @@ import {StatementLandingText} from "./components/StatementLandingText.tsx";
 import {StatementGenerateTab} from "./components/StatementGenerateTab.tsx";
 import './i18n';
 import {StatementVerifyTab} from "./components/StatementVerifyTab.tsx";
+import {customChakraTheme} from "./styles/CustomChakraTheme.tsx";
 
 function App() {
-  const theme = extendTheme({
-    components: {
-      Tabs: {
-        baseStyle: {
-          tab: {
-            _selected: {
-              color: '#3902BF',
-              borderColor: '#3902BF',
-            },
-          },
-        },
-      },
-      PinInputField: {
-        baseStyle: {
-            field: {
-              color: '#00044F',
-              borderColor: '#00044F',
-            }
-        },
-      },
-    },
-  });
+
 
 
   return (
-      <ChakraProvider theme={ theme }>
+      <ChakraProvider theme={ customChakraTheme }>
         <>
           <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}}/>
           <div style={{ display: "flex", alignItems: "center", paddingTop: '50px', flexDirection: "column" }}>
