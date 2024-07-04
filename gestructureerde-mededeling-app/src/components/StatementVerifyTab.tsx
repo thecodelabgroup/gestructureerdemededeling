@@ -14,7 +14,7 @@ export const StatementVerifyTab = () => {
         const trimmedStatement = value.slice(0, -1);
         const validStatement = statementTransformer(trimmedStatement.slice(0, -2));
 
-        if (validStatement.slice(-5, -3) === trimmedStatement.slice(-2)) {
+        if (validStatement.slice(-5, -3) === trimmedStatement.slice(-2) && trimmedStatement.length === 12) {
             setStatementBackground("#b1f5b1");
         } else {
             setStatementBackground("#f8c9ba");
