@@ -1,27 +1,7 @@
-import {
-    Icon,
-    Link,
-    Stack,
-    Text,
-    VStack,
-    StackProps
-} from '@chakra-ui/react'
+import {Icon, Link, Stack, StackProps, Text, VStack} from '@chakra-ui/react'
 import React from 'react'
-import {
-    FaAccessibleIcon, FaAppStore, FaDiscord, FaFacebook,
-    FaGooglePlus,
-    FaInstagram,
-    FaLinkedin,
-    FaLinkedinIn, FaSlack, FaTelegram,
-    FaWhatsapp,
-    FaWhatsappSquare,
-    FaYoutube
-} from 'react-icons/fa'
-import {IoLogoLinkedin, IoLogoTwitter} from 'react-icons/io'
-import {MdEmail} from 'react-icons/md'
+import {FaDiscord, FaInstagram, FaLinkedinIn, FaSlack, FaYoutube} from 'react-icons/fa'
 import Logo from '../assets/logo.png'
-import {FaThreads} from "react-icons/fa6";
-import {FiLinkedin} from "react-icons/fi";
 
 type FooterLinkProps = {
     icon?: React.ElementType
