@@ -32,6 +32,11 @@ p {
     margin-right: 15px;
 }
 
+.statement-verify-reset-button {
+    border: #00044F 2px solid;
+    color: #00044F;
+}
+
 .statement-copy-button {
     background: #00044F;
     color: white;
