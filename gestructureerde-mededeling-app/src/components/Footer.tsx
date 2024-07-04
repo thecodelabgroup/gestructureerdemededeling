@@ -7,11 +7,21 @@ import {
     StackProps
 } from '@chakra-ui/react'
 import React from 'react'
-import {DiGithubBadge} from 'react-icons/di'
-import {FaYoutube} from 'react-icons/fa'
+import {
+    FaAccessibleIcon, FaAppStore, FaDiscord, FaFacebook,
+    FaGooglePlus,
+    FaInstagram,
+    FaLinkedin,
+    FaLinkedinIn, FaSlack, FaTelegram,
+    FaWhatsapp,
+    FaWhatsappSquare,
+    FaYoutube
+} from 'react-icons/fa'
 import {IoLogoLinkedin, IoLogoTwitter} from 'react-icons/io'
 import {MdEmail} from 'react-icons/md'
 import Logo from '../assets/logo.png'
+import {FaThreads} from "react-icons/fa6";
+import {FiLinkedin} from "react-icons/fi";
 
 type FooterLinkProps = {
     icon?: React.ElementType
@@ -21,36 +31,36 @@ type FooterLinkProps = {
 
 const FooterLink = ({icon, href, label}: FooterLinkProps) => (
     <Link display='inline-block' href={href} aria-label={label} isExternal>
-        <Icon as={icon} fontSize='xl' color='gray.400'/>
+        <Icon as={icon} fontSize='l' color='gray.400'/>
     </Link>
 )
 
 const links = [
     {
-        icon: DiGithubBadge,
-        label: 'GitHub',
-        href: 'https://github.com/segunadebayo',
-    },
-    {
-        icon: IoLogoTwitter,
+        icon: FaLinkedinIn,
         label: 'Twitter',
         href: 'https://twitter.com/thesegunadebayo',
     },
     {
-        icon: IoLogoLinkedin,
+        icon: FaSlack,
+        label: 'Twitter',
+        href: 'https://twitter.com/thesegunadebayo',
+    },
+    {
+        icon: FaInstagram,
+        label: 'YouTube',
+        href: 'https://www.youtube.com/channel/UC4TmDovH46TB4S0SM0Y4CIg',
+    },
+    {
+        icon: FaYoutube,
         label: 'LinkedIn',
         href: 'https://linkedin.com/in/thesegunadebayo/',
     },
     {
-        icon: MdEmail,
-        label: 'Email',
-        href: 'mailto:sage@adebayosegun.com',
-    },
-    {
-        icon: FaYoutube,
-        label: 'YouTube',
-        href: 'https://www.youtube.com/channel/UC4TmDovH46TB4S0SM0Y4CIg',
-    },
+        icon: FaDiscord,
+        label: 'Twitter',
+        href: 'https://twitter.com/thesegunadebayo',
+    }
 ]
 
 export const Footer = (props: StackProps) => (
@@ -61,7 +71,7 @@ export const Footer = (props: StackProps) => (
                 <img src={Logo} style={{maxHeight: "20px", maxWidth: "100px"}} alt="Logo"/>
             </div>
         </Text>
-        <Stack mt={4} direction='row' spacing='12px' justify='center'>
+        <Stack mt={2} direction='row' spacing='12px' justify='center'>
             {links.map((link) => (
                 <FooterLink key={link.href} {...link} />
             ))}

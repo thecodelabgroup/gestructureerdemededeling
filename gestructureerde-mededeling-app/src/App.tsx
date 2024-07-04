@@ -66,7 +66,7 @@ function App() {
               </Tabs>
             </div>
           </div>
-          <Footer/>
+          <Footer style={{ position: "fixed", bottom: "50px", width: "100%" }}/>
         </>
       </ChakraProvider>
   )
