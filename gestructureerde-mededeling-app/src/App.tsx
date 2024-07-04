@@ -55,12 +55,8 @@ function App() {
                   <Tab><b>Mededeling controleren</b></Tab>
                 </TabList>
                 <TabPanels>
-                  <TabPanel>
-                    <StatementCreateTab />
-                  </TabPanel>
-                  <TabPanel>
-                    <StatementGenerateTab />
-                  </TabPanel>
+                  <StatementCreateTab />
+                  <StatementGenerateTab />
                   <StatementVerifyTab />
                 </TabPanels>
               </Tabs>

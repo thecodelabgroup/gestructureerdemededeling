@@ -1,4 +1,4 @@
-import {Button, HStack, PinInput, PinInputField} from "@chakra-ui/react";
+import {Button, HStack, PinInput, PinInputField, TabPanel} from "@chakra-ui/react";
 import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
 import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
 import {generateRandomStatement} from "../utils/RandomStatementGenerator.tsx";
@@ -22,7 +22,7 @@ export const StatementGenerateTab = () => {
     }
 
     return (
-        <>
+        <TabPanel>
             <p>
                 {t('generate-statement-main-message')}
             </p>
@@ -46,6 +46,6 @@ export const StatementGenerateTab = () => {
                     {t('common-statement-copy-button-label')}
                 </Button>
             </div>
-        </>
+        </TabPanel>
     )
 }

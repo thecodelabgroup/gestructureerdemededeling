@@ -1,4 +1,4 @@
-import {Button, HStack, PinInput, PinInputField} from "@chakra-ui/react";
+import {Button, HStack, PinInput, PinInputField, TabPanel} from "@chakra-ui/react";
 import {CopyIcon, RepeatIcon} from "@chakra-ui/icons";
 import {useState} from "react";
 import {calculateChecksum} from "../utils/ChecksumCalculator.tsx";
@@ -24,7 +24,7 @@ export const StatementCreateTab = () => {
     }
 
     return (
-        <>
+        <TabPanel>
             <p>
                 {t('create-statement-main-message')}
             </p>
@@ -51,6 +51,6 @@ export const StatementCreateTab = () => {
                     {t('common-statement-copy-button-label')}
                 </Button>
             </div>
-        </>
+        </TabPanel>
     )
 }
