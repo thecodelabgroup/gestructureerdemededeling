@@ -41,3 +41,7 @@ p {
     background: #00044F;
     color: white;
 }
+
+.statement-tab-title {
+    font-weight: bold;
+}

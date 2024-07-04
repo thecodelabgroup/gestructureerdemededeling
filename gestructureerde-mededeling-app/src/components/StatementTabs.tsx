@@ -2,14 +2,17 @@ import {Tab, TabList, TabPanels, Tabs} from "@chakra-ui/react";
 import {StatementCreateTab} from "./StatementCreateTab.tsx";
 import {StatementGenerateTab} from "./StatementGenerateTab.tsx";
 import {StatementVerifyTab} from "./StatementVerifyTab.tsx";
+import {useTranslation} from "react-i18next";
 
 export const StatementTabs = () => {
+    const { t } = useTranslation();
+
     return (
         <Tabs variant='enclosed' style={{width: "1000px"}}>
             <TabList>
-                <Tab><b>Zelf creëren</b></Tab>
-                <Tab><b>Automatisch genereren</b></Tab>
-                <Tab><b>Mededeling controleren</b></Tab>
+                <Tab className="statement-tab-title">{t('statement-create-tab-label')}</Tab>
+                <Tab className="statement-tab-title">{t('statement-generate-tab-label')}</Tab>
+                <Tab className="statement-tab-title">{t('statement-verify-tab-label')}</Tab>
             </TabList>
             <TabPanels>
                 <StatementCreateTab />
