@@ -24,8 +24,7 @@ export const StatementVerifyTab = () => {
     return (
         <TabPanel>
             <p>
-                Start met het typen van uw gestructureerde mededeling. Onze tool controleert automatisch de geldigheid,
-                een groene achtergrond geeft aan dat de invoer geldig is.
+                {t('verify-statement-main-message')}
             </p>
             <HStack className="statement-container" style={{backgroundColor: statementBackground}}>
                 <PinInput type='number' size="md" onChange={pinInputOnChange} placeholder="0" defaultValue="0000000000000">

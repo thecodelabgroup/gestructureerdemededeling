@@ -5,5 +5,6 @@
   "common-statement-reset-button-label": "Reset mededeling",
   "create-statement-main-message": "Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.",
   "generate-statement-main-message": "De onderstaande gestructureerde mededeling wordt automatisch gegenereerd door middel van een willekeurig gekozen cijfercombinatie.",
-  "generate-statement-generate-button-label": "Genereer mededeling"
+  "generate-statement-generate-button-label": "Genereer mededeling",
+  "verify-statement-main-message": "Start met het typen van uw gestructureerde mededeling. Onze tool controleert automatisch de geldigheid, een groene achtergrond geeft aan dat de invoer geldig is."
 }
