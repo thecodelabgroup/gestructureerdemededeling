@@ -13,6 +13,7 @@ import {StatementCreateTab} from "./components/StatementCreateTab.tsx";
 import {StatementLandingText} from "./components/StatementLandingText.tsx";
 import {StatementGenerateTab} from "./components/StatementGenerateTab.tsx";
 import './i18n';
+import {StatementVerifyTab} from "./components/StatementVerifyTab.tsx";
 
 function App() {
   const theme = extendTheme({
@@ -60,9 +61,7 @@ function App() {
                   <TabPanel>
                     <StatementGenerateTab />
                   </TabPanel>
-                  <TabPanel>
-                    Hello
-                  </TabPanel>
+                  <StatementVerifyTab />
                 </TabPanels>
               </Tabs>
             </div>
