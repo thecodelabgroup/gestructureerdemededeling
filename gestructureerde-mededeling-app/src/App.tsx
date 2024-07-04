@@ -1,4 +1,3 @@
-import './App.css'
 import {
   ChakraProvider,
   Tab,
@@ -16,9 +15,6 @@ import {StatementVerifyTab} from "./components/StatementVerifyTab.tsx";
 import {customChakraTheme} from "./styles/CustomChakraTheme.tsx";
 
 function App() {
-
-
-
   return (
       <ChakraProvider theme={ customChakraTheme }>
         <>
