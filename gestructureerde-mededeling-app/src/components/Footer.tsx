@@ -3,10 +3,10 @@ import Logo from '../assets/logo.png'
 
 export const Footer = (props: StackProps) => (
     <VStack as='footer' spacing={4} mt={12} textAlign='center' {...props}>
-        <Text fontSize='sm' style={{ fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
+        <Text fontSize='sm'>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <span style={{ marginBottom: 5 }}>Proudly made by</span>
-                <img src={Logo} style={{maxHeight: "20px", maxWidth: "80px"}} alt="Logo"/>
+                <img src={Logo} style={{maxHeight: "20px", maxWidth: "80px"}} alt="Codelab logo"/>
             </div>
         </Text>
     </VStack>
