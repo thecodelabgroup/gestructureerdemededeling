@@ -6,6 +6,20 @@ p {
     color: #00044F;
 }
 
+.main-statement-landing-container {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+
+.main-statement-tabs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #00044F;
+}
+
 .statement-container {
     margin-top: 20px;
     padding: 20px;
@@ -44,4 +58,10 @@ p {
 
 .statement-tab-title {
     font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
 }

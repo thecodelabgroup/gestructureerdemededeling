@@ -10,15 +10,15 @@ function App() {
   return (
       <ChakraProvider theme={ customChakraTheme }>
         <>
-          <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}}/>
-          <div style={{ display: "flex", alignItems: "center", paddingTop: '50px', flexDirection: "column" }}>
+          <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}} />
+          <div className="main-statement-landing-container">
             <StatementLandingText />
             <br/>
-            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontFamily: 'Poppins, sans-serif', color: "#00044F" }}>
+            <div className="main-statement-tabs-container">
               <StatementTabs />
             </div>
           </div>
-          <Footer style={{ position: "fixed", bottom: "50px", width: "100%" }}/>
+          <Footer className="footer" />
         </>
       </ChakraProvider>
   )
