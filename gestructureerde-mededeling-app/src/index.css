@@ -71,3 +71,24 @@ p {
         display: none;
     }
 }
+
+.mobile-statement-container {
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.mobile-statement-container h1 {
+    font-size: 35px;
+    padding-bottom: 15px;
+    color: #00044F;
+    white-space: normal;
+    word-wrap: break-word;
+    display: inline-block;
+    width: 100%;
+}
+
+.mobile-statement-container p {
+    color: #00044F;
+    word-wrap: break-word;
+}

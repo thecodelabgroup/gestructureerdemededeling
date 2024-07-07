@@ -5,6 +5,7 @@ import {StatementLandingText} from "./components/StatementLandingText.tsx";
 import './i18n';
 import {customChakraTheme} from "./styles/CustomChakraTheme.tsx";
 import {StatementTabs} from "./components/StatementTabs.tsx";
+import {MobileStatementLandingText} from "./components/MobileStatementLandingText.tsx";
 
 function App() {
     const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -14,8 +15,8 @@ function App() {
             <>
                 <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}} />
                 {isMobile ? (
-                    <Box textAlign="center" padding="20px">
-                        <p>This app is specifically made for desktop.</p>
+                    <Box className="mobile-statement-container">
+                        <MobileStatementLandingText />
                     </Box>
                 ) : (
                     <div className="main-statement-landing-container">
