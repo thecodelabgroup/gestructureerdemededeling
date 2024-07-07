@@ -65,3 +65,9 @@ p {
     bottom: 50px;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .main-statement-landing-container, .main-statement-tabs-container {
+        display: none;
+    }
+}
