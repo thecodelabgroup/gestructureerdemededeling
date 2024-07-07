@@ -6,10 +6,9 @@ import {
     IconButton,
     Link,
     chakra,
-    useColorMode,
     useColorModeValue,
     useDisclosure,
-    useUpdateEffect,
+    useUpdateEffect, MenuButton, Menu, MenuList, MenuItem, Image
 } from '@chakra-ui/react'
 import { useScroll } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
@@ -19,11 +18,24 @@ import VersionSwitcher from './VersionSwitcher.tsx'
 import { GithubIcon } from './icons/GithubIcon.tsx'
 import { DiscordIcon } from './icons/DiscordIcon.tsx'
 import SponsorButton from "./SponsorButton.tsx";
+import i18n from "i18next";
+import {ChevronDownIcon} from "@chakra-ui/icons";
 
 function HeaderContent() {
     const mobileNav = useDisclosure()
+    const [selectedLang, setSelectedLang] = useState('en');
 
-    const { toggleColorMode: toggleMode } = useColorMode()
+    const flags = {
+        nl: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1f3-1f1f1.svg',
+        fr: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1eb-1f1f7.svg',
+        en: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1ec-1f1e7.svg',
+        de: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1e9-1f1ea.svg',
+    };
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+        setSelectedLang(lng);
+    };
 
     const text = useColorModeValue('dark', 'light')
     const SwitchIcon = useColorModeValue(FaMoon, FaSun)
@@ -100,16 +112,19 @@ function HeaderContent() {
                         </Link>
                     </HStack>
                     <HStack spacing='5'>
-                        <IconButton
-                            size='md'
-                            fontSize='lg'
-                            aria-label={`Switch to ${text} mode`}
-                            variant='ghost'
-                            color='current'
-                            ml={{ base: '0', md: '3' }}
-                            onClick={toggleMode}
-                            icon={<SwitchIcon />}
-                        />
+                        <Menu>
+                            <MenuButton ml={{ base: '0', md: '3' }} as={IconButton} variant="outline" icon={<Image src={flags[selectedLang]} alt={`${selectedLang} flag`} boxSize='20px' />}>
+                                Language
+                            </MenuButton>
+                            <MenuList>
+                                {Object.keys(flags).map((lng) => (
+                                    <MenuItem key={lng} onClick={() => changeLanguage(lng)}>
+                                        <Image src={flags[lng]} alt={`${lng} flag`} boxSize='20px' mr='12px' />
+                                        {lng.toUpperCase()}
+                                    </MenuItem>
+                                ))}
+                            </MenuList>
+                        </Menu>
                         <SponsorButton ml='5' />
                     </HStack>
                 </Flex>
