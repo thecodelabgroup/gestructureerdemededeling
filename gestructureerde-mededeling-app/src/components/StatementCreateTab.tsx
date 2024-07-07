@@ -7,12 +7,14 @@ import {statementPinInputStyles} from "../styles/StatementPinInputStyles.tsx";
 import {generateStatementSegment} from "../utils/StatementSegmentGenerator.tsx";
 import {useTranslation} from "react-i18next";
 import {useCopyStatementToClipboard} from "../hooks/UseCopyStatementToClipboard.tsx";
+import {useResetStatement} from "../hooks/UseResetStatement.tsx";
 
 export const StatementCreateTab = () => {
     const [statement, setStatement] = useState("+++000/0000/00000+++");
     const [statementValue, setStatementValue] = useState("00000000000");
     const [checksum, setChecksum] = useState("00");
     const copyStatementToClipboard = useCopyStatementToClipboard();
+    const resetStatement = useResetStatement();
     const { t } = useTranslation();
 
     const pinInputOnChange = (value: string) => {
@@ -29,6 +31,7 @@ export const StatementCreateTab = () => {
         setStatementValue("00000000000");
         setChecksum("00");
         setStatement("+++000/0000/00000+++");
+        resetStatement();
     }
 
     return (
