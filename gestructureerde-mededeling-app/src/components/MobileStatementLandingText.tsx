@@ -17,7 +17,7 @@ export const MobileStatementLandingText = () => {
                 <br/><br/>
                 Dank voor uw begrip.
                 <br/><br/>
-                Codelab™
+                Codelab™ 2024
             </Text>
         </Box>
     );
