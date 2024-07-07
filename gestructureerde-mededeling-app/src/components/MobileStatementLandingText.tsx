@@ -16,8 +16,6 @@ export const MobileStatementLandingText = () => {
                 Wij verzoeken u vriendelijk om over te schakelen naar een desktop-apparaat voor de beste gebruikerservaring.
                 <br/><br/>
                 Dank voor uw begrip.
-                <br/><br/>
-                Codelab™ 2024
             </Text>
         </Box>
     );
