@@ -1,3 +1,15 @@
 {
-  "hello": "Welcome to our application"
+  "common-statement-copy-success-message": "Mededeling gekopieerd.",
+  "common-statement-copy-error-message": "Er is een fout opgetreden bij het kopiëren van de mededeling.",
+  "common-statement-copy-button-label": "Mededeling kopiëren",
+  "common-statement-reset-button-label": "Reset mededeling",
+  "statement-landing-main-title-label": "Gestructureerde Mededeling.",
+  "statement-landing-main-text-label": "Een overschrijving met gestructureerde mededeling wordt gebruikt voor de automatische verwerking van betalingen. De mededeling bestaat uit drie groepen cijfers, gescheiden door schuine strepen. De eerste groep heeft drie cijfers, de tweede vier, en de derde vijf. De mededeling begint en eindigt met drie plustekens (+++).",
+  "statement-create-tab-label": "Zelf creëren",
+  "statement-generate-tab-label": "Automatisch genereren",
+  "statement-verify-tab-label": "Mededeling controleren",
+  "create-statement-main-message": "Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.",
+  "generate-statement-main-message": "De onderstaande gestructureerde mededeling wordt automatisch gegenereerd door middel van een willekeurig gekozen cijfercombinatie.",
+  "generate-statement-generate-button-label": "Genereer mededeling",
+  "verify-statement-main-message": "Start met het typen van uw gestructureerde mededeling. Onze tool controleert automatisch de geldigheid, een groene achtergrond geeft aan dat de invoer geldig is."
 }

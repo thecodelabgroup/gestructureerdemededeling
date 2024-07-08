@@ -116,11 +116,10 @@ function HeaderContent() {
                             <MenuButton ml={{ base: '0', md: '3' }} as={IconButton} variant="outline" icon={<Image src={flags[selectedLang]} alt={`${selectedLang} flag`} boxSize='20px' />}>
                                 Language
                             </MenuButton>
-                            <MenuList>
+                            <MenuList minWidth='50px'>
                                 {Object.keys(flags).map((lng) => (
-                                    <MenuItem key={lng} onClick={() => changeLanguage(lng)}>
-                                        <Image src={flags[lng]} alt={`${lng} flag`} boxSize='20px' mr='12px' />
-                                        {lng.toUpperCase()}
+                                    <MenuItem key={lng} onClick={() => changeLanguage(lng)} style={{ display: "flex", alignItems: "center", justifyContent: "center"}}>
+                                        <Image src={flags[lng]} alt={`${lng} flag`} boxSize='20px' />
                                     </MenuItem>
                                 ))}
                             </MenuList>
