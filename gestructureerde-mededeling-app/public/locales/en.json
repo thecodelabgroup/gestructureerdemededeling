@@ -1,15 +1,15 @@
 {
-  "common-statement-copy-success-message": "Mededeling gekopieerd.",
-  "common-statement-copy-error-message": "Er is een fout opgetreden bij het kopiëren van de mededeling.",
-  "common-statement-copy-button-label": "Mededeling kopiëren",
-  "common-statement-reset-button-label": "Reset mededeling",
-  "statement-landing-main-title-label": "Gestructureerde Mededeling.",
-  "statement-landing-main-text-label": "Een overschrijving met gestructureerde mededeling wordt gebruikt voor de automatische verwerking van betalingen. De mededeling bestaat uit drie groepen cijfers, gescheiden door schuine strepen. De eerste groep heeft drie cijfers, de tweede vier, en de derde vijf. De mededeling begint en eindigt met drie plustekens (+++).",
-  "statement-create-tab-label": "Zelf creëren",
-  "statement-generate-tab-label": "Automatisch genereren",
-  "statement-verify-tab-label": "Mededeling controleren",
-  "create-statement-main-message": "Start met het typen van een getal van maximaal 10 cijfers, de laatste twee cijfers (het controlegetal) worden automatisch berekend.",
-  "generate-statement-main-message": "De onderstaande gestructureerde mededeling wordt automatisch gegenereerd door middel van een willekeurig gekozen cijfercombinatie.",
-  "generate-statement-generate-button-label": "Genereer mededeling",
-  "verify-statement-main-message": "Start met het typen van uw gestructureerde mededeling. Onze tool controleert automatisch de geldigheid, een groene achtergrond geeft aan dat de invoer geldig is."
+  "common-statement-copy-success-message": "Notification copied.",
+  "common-statement-copy-error-message": "An error occurred while copying the notification.",
+  "common-statement-copy-button-label": "Copy notification",
+  "common-statement-reset-button-label": "Reset notification",
+  "statement-landing-main-title-label": "Structured Notification.",
+  "statement-landing-main-text-label": "A transfer with a structured notification is used for automatic payment processing. The notification consists of three groups of digits, separated by slashes. The first group has three digits, the second four, and the third five. The notification begins and ends with three plus signs (+++).",
+  "statement-create-tab-label": "Create yourself",
+  "statement-generate-tab-label": "Generate automatically",
+  "statement-verify-tab-label": "Verify notification",
+  "create-statement-main-message": "Start by typing a number of up to 10 digits, the last two digits (the control number) are automatically calculated.",
+  "generate-statement-main-message": "The structured notification below is automatically generated using a randomly chosen combination of digits.",
+  "generate-statement-generate-button-label": "Generate notification",
+  "verify-statement-main-message": "Start by typing your structured notification. Our tool automatically checks the validity, a green background indicates that the entry is valid."
 }

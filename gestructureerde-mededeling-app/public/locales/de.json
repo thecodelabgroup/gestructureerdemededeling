@@ -1,0 +1,15 @@
+{
+  "common-statement-copy-success-message": "Mitteilung kopiert.",
+  "common-statement-copy-error-message": "Beim Kopieren der Mitteilung ist ein Fehler aufgetreten.",
+  "common-statement-copy-button-label": "Mitteilung kopieren",
+  "common-statement-reset-button-label": "Mitteilung zurücksetzen",
+  "statement-landing-main-title-label": "Strukturierte Mitteilung.",
+  "statement-landing-main-text-label": "Eine Überweisung mit strukturierter Mitteilung wird für die automatische Zahlungsabwicklung verwendet. Die Mitteilung besteht aus drei Zifferngruppen, getrennt durch Schrägstriche. Die erste Gruppe hat drei Ziffern, die zweite vier und die dritte fünf. Die Mitteilung beginnt und endet mit drei Pluszeichen (+++).",
+  "statement-create-tab-label": "Selbst erstellen",
+  "statement-generate-tab-label": "Automatisch generieren",
+  "statement-verify-tab-label": "Mitteilung überprüfen",
+  "create-statement-main-message": "Beginnen Sie mit der Eingabe einer Zahl von bis zu 10 Ziffern, die letzten beiden Ziffern (die Prüfziffer) werden automatisch berechnet.",
+  "generate-statement-main-message": "Die untenstehende strukturierte Mitteilung wird automatisch anhand einer zufällig gewählten Ziffernkombination generiert.",
+  "generate-statement-generate-button-label": "Mitteilung generieren",
+  "verify-statement-main-message": "Beginnen Sie mit der Eingabe Ihrer strukturierten Mitteilung. Unser Tool überprüft automatisch die Gültigkeit, ein grüner Hintergrund zeigt an, dass die Eingabe gültig ist."
+}
