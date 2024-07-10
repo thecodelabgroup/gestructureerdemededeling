@@ -92,3 +92,20 @@ p {
     color: #00044F;
     word-wrap: break-word;
 }
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    margin-bottom: 5px;
+}
+
+.footer-logo {
+    max-height: 20px;
+    max-width: 80px;
+}
+
