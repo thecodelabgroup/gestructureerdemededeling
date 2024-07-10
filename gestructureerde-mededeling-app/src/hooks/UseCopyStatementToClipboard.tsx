@@ -12,7 +12,7 @@ export const useCopyStatementToClipboard = () => {
                     title: t('common-statement-copy-success-message'),
                     status: 'success',
                     duration: 2500,
-                    isClosable: true
+                    isClosable: false
                 })
             })
             .catch(() => {
@@ -20,7 +20,7 @@ export const useCopyStatementToClipboard = () => {
                     title: t('common-statement-copy-error-message'),
                     status: 'error',
                     duration: 2500,
-                    isClosable: true
+                    isClosable: false
                 })
             });
     };
