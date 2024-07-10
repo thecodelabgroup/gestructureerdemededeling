@@ -7,14 +7,17 @@ import {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {useCopyStatementToClipboard} from "../hooks/UseCopyStatementToClipboard.tsx";
 import {statementTransformer} from "../utils/StatementTransformer.tsx";
+import {useStatementGenerated} from "../hooks/UseStatementGenerated.tsx";
 
 export const StatementGenerateTab = () => {
     const [statement, setStatement] = useState(generateRandomStatement());
     const copyStatementToClipboard = useCopyStatementToClipboard();
+    const generateNewStatement = useStatementGenerated();
     const { t } = useTranslation();
 
     function generateStatement() {
         setStatement(generateRandomStatement());
+        generateNewStatement();
     }
 
     const copyStatementClick = () => {
