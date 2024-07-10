@@ -1,4 +1,4 @@
-import {useToast, Alert, AlertIcon, AlertTitle, CloseButton} from "@chakra-ui/react";
+import {useToast, Alert, AlertIcon, AlertTitle} from "@chakra-ui/react";
 import {t} from "i18next";
 
 export const useResetStatement = () => {
@@ -6,7 +6,7 @@ export const useResetStatement = () => {
 
     return () => {
         toast({
-            render: ({ id, onClose }) => (
+            render: () => (
                 <Alert
                     status="info"
                     variant="solid"
