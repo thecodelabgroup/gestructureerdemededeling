@@ -66,8 +66,8 @@ function HeaderContent() {
                     <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
                         <Link
                             isExternal
-                            aria-label='Go to Chakra UI GitHub page'
-                            href={"siteConfig.repo.url"}
+                            aria-label='Go to Codelab GitHub page'
+                            href="https://github.com/thecodelabgroup/gestructureerdemededeling"
                         >
                             <Icon
                                 as={GithubIcon}
