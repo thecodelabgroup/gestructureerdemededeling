@@ -6,16 +6,15 @@ export const MobileStatementLandingText = () => {
 
     return (
         <Box p={4}>
-            <Heading as='h1' size='lg' noOfLines={1} style={{ paddingBottom: "15px", color: "#00044F", fontFamily: 'Poppins, sans-serif' }}>
+            <Heading as='h1' size='lg' noOfLines={1}>
                 {t('statement-landing-main-title-label')}
             </Heading>
-            <Text style={{ color: "#00044F", fontFamily: 'Poppins, sans-serif' }}>
-                Beste gebruiker,
+            <Text>
+                {t('mobile-landing-text-part-one')}
                 <br/><br/>
-                Bedankt voor het bezoeken van onze website. Helaas is onze tool momenteel nog niet beschikbaar op mobiele apparaten.
-                Wij verzoeken u vriendelijk om over te schakelen naar een desktop-apparaat voor de beste gebruikerservaring.
+                {t('mobile-landing-text-part-two')}
                 <br/><br/>
-                Dank voor uw begrip.
+                {t('mobile-landing-text-part-three')}
             </Text>
         </Box>
     );

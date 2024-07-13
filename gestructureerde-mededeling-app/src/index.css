@@ -1,4 +1,4 @@
-* {
+*, html, body {
     font-family: Poppins, "sans-serif";
 }
 
@@ -81,6 +81,7 @@ p {
 .mobile-statement-container h1 {
     font-size: 2rem;
     padding-bottom: 15px;
+    font-family: Poppins, "sans-serif";
     color: #00044F;
     white-space: normal;
     word-wrap: break-word;
@@ -107,5 +108,10 @@ p {
 .footer-logo {
     max-height: 20px;
     max-width: 80px;
+}
+
+.mobile-landing-header {
+    padding-bottom: 15px;
+    color: #00044f;
 }
 
