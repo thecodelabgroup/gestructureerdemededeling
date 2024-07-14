@@ -28,7 +28,7 @@ function HeaderContent() {
         <>
             <Flex w='100%' h='100%' px='6' align='center' justify='space-between'>
                 <Flex align='center'>
-                    <chakra.a display='block' aria-label='Chakra UI, Back to homepage'>
+                    <chakra.a display='block'>
                         <img
                             src={Logo}
                             className="header-logo"
@@ -129,4 +129,4 @@ function Header(props: HTMLChakraProps<'header'>) {
     )
 }
 
-export default Header
+export default Header;
