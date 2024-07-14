@@ -100,6 +100,7 @@ function HeaderContent() {
                             </MenuList>
                         </Menu>
                         <SponsorButton
+                            onClick={() => window.open('https://github.com/sponsors/thecodelabgroup', '_blank')}
                             ml='5'
                         />
                     </HStack>
