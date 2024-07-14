@@ -4,17 +4,19 @@
   "common-statement-copy-button-label": "Mitteilung kopieren",
   "common-statement-reset-button-label": "Mitteilung zurücksetzen",
   "common-statement-reset-message": "Mitteilung zurückgesetzt.",
+  "common-statement-regenerate-message": "Mitteilung generiert.",
   "statement-landing-main-title-label": "Strukturierte Mitteilung.",
   "statement-landing-main-text-label": "Eine Überweisung mit einer strukturierten Mitteilung wird für die automatische Verarbeitung von Zahlungen verwendet. Die Mitteilung besteht aus drei Zifferngruppen, getrennt durch Schrägstriche. Die erste Gruppe hat drei Ziffern, die zweite vier und die dritte fünf. Die Mitteilung beginnt und endet mit drei Pluszeichen (+++).",
   "statement-create-tab-label": "Manuell erstellen",
   "statement-generate-tab-label": "Automatisch generieren",
   "statement-verify-tab-label": "Mitteilung überprüfen",
   "create-statement-main-message": "Beginnen Sie mit der Eingabe einer Zahl von bis zu 10 Ziffern, die letzten beiden Ziffern (die Prüfziffer) werden automatisch berechnet.",
-  "generate-statement-main-message": "Die unten stehende strukturierte Mitteilung wird automatisch mit einer zufällig gewählten Ziffernkombination generiert.",
+  "generate-statement-main-message": "Die unten stehende strukturierte Mitteilung wird automatisch von unserem System mit einer zufällig gewählten Ziffernkombination generiert, um Einzigartigkeit und Genauigkeit zu gewährleisten.",
   "generate-statement-generate-button-label": "Mitteilung generieren",
   "verify-statement-main-message": "Beginnen Sie mit der Eingabe Ihrer strukturierten Mitteilung. Unser Tool überprüft automatisch deren Gültigkeit; ein grüner Hintergrund zeigt an, dass die Eingabe gültig ist.",
   "footer-text": "Entwickelt von",
   "mobile-landing-text-part-one": "Lieber Benutzer,",
   "mobile-landing-text-part-two": "Vielen Dank für den Besuch unserer Website. Leider ist unser Tool derzeit nicht auf mobilen Geräten verfügbar. Wir bitten Sie, auf ein Desktop-Gerät umzuschalten, um die beste Benutzererfahrung zu erzielen.",
-  "mobile-landing-text-part-three": "Vielen Dank für Ihr Verständnis."
+  "mobile-landing-text-part-three": "Vielen Dank für Ihr Verständnis.",
+  "sponsor-button-label": "Sponsor"
 }
