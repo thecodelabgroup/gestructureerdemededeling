@@ -4,6 +4,7 @@
   "common-statement-copy-button-label": "Copier la déclaration",
   "common-statement-reset-button-label": "Réinitialiser la déclaration",
   "common-statement-reset-message": "Déclaration réinitialisée.",
+  "common-statement-regenerate-message": "Déclaration généré.",
   "statement-landing-main-title-label": "Déclaration structurée.",
   "statement-landing-main-text-label": "Un virement avec une déclaration structurée est utilisé pour le traitement automatique des paiements. La déclaration se compose de trois groupes de chiffres, séparés par des barres obliques. Le premier groupe a trois chiffres, le deuxième quatre, et le troisième cinq. La déclaration commence et se termine par trois signes plus (+++).",
   "statement-create-tab-label": "Créer manuellement",
@@ -16,5 +17,6 @@
   "footer-text": "Développé par",
   "mobile-landing-text-part-one": "Cher utilisateur,",
   "mobile-landing-text-part-two": "Merci de visiter notre site web. Malheureusement, notre outil n'est pas encore disponible sur les appareils mobiles. Nous vous demandons de passer à un appareil de bureau pour une meilleure expérience utilisateur.",
-  "mobile-landing-text-part-three": "Merci pour votre compréhension."
+  "mobile-landing-text-part-three": "Merci pour votre compréhension.",
+  "sponsor-button-label": "Sponsor"
 }
