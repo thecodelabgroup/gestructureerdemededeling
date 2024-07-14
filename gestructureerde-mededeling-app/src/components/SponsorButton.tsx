@@ -2,7 +2,7 @@ import { Box, BoxProps, Icon } from '@chakra-ui/react'
 import {FaHeart} from 'react-icons/fa'
 import {useTranslation} from "react-i18next";
 
-const SponsorButton = ({ onClick, ...props }: BoxProps & { onClick?: () => void }) => {
+export const SponsorButton = ({ onClick, ...props }: BoxProps & { onClick?: () => void }) => {
     const { t } = useTranslation();
 
     return (
@@ -20,5 +20,3 @@ const SponsorButton = ({ onClick, ...props }: BoxProps & { onClick?: () => void 
         </Box>
     )
 }
-
-export default SponsorButton;

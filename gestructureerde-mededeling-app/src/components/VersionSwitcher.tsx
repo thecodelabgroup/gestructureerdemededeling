@@ -1,4 +1,4 @@
-import { Select, SelectProps } from '@chakra-ui/react'
+import {Select, SelectProps} from '@chakra-ui/react'
 
 export const VersionSwitcher = (props: SelectProps) => {
     return (
