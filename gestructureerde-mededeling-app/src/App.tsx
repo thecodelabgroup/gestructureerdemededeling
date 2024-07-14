@@ -1,6 +1,6 @@
 import {Box, ChakraProvider, useMediaQuery} from '@chakra-ui/react'
 import Header from "./components/Header.tsx";
-import Footer from "./components/Footer.tsx";
+import {Footer} from "./components/Footer.tsx";
 import {StatementLandingText} from "./components/StatementLandingText.tsx";
 import './i18n';
 import {customChakraTheme} from "./styles/CustomChakraTheme.tsx";

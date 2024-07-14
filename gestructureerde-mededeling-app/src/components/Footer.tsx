@@ -22,5 +22,3 @@ export const Footer = (props: StackProps) => {
         </VStack>
     )
 }
-
-export default Footer;
