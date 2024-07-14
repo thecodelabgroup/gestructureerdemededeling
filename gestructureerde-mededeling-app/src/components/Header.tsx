@@ -1,21 +1,11 @@
-import {
-    Flex,
-    HStack,
-    HTMLChakraProps,
-    Icon,
-    IconButton,
-    Link,
-    chakra,
-    useDisclosure,
-    useUpdateEffect, MenuButton, Menu, MenuList, MenuItem, Image
-} from '@chakra-ui/react'
-import { useScroll } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-import { FaYoutube } from 'react-icons/fa'
+import {chakra, Flex, HStack, HTMLChakraProps, Icon, IconButton, Image, Link, Menu, MenuButton, MenuItem, MenuList, useDisclosure, useUpdateEffect} from '@chakra-ui/react'
+import {useScroll} from 'framer-motion'
+import {useEffect, useRef, useState} from 'react'
+import {FaYoutube} from 'react-icons/fa'
 import Logo from '../assets/logo.png'
 import VersionSwitcher from './VersionSwitcher.tsx'
-import { GithubIcon } from './icons/GithubIcon.tsx'
-import { DiscordIcon } from './icons/DiscordIcon.tsx'
+import {GithubIcon} from './icons/GithubIcon.tsx'
+import {DiscordIcon} from './icons/DiscordIcon.tsx'
 import SponsorButton from "./SponsorButton.tsx";
 import i18n from "i18next";
 
