@@ -1,13 +1,13 @@
 Checklist readme: 
 
 Components: 
-- [x] Footer.tsx
-- [x] Header.tsx
-- [x] MobileStatementLandingText.tsx
-- [x] SponsorButton.tsx
-- [x] StatementCreateTab.tsx
-- [x] StatementGenerateTab.tsx
-- [x] StatementLandingText.tsx
-- [x] StatementTabs.tsx
-- [x] StatementVerifyTab.tsx
+- [] Footer.tsx
+- [] Header.tsx
+- [] MobileStatementLandingText.tsx
+- [] SponsorButton.tsx
+- [] StatementCreateTab.tsx
+- [] StatementGenerateTab.tsx
+- [] StatementLandingText.tsx
+- [] StatementTabs.tsx
+- [] StatementVerifyTab.tsx
 - [x] VersionSwitcher.tsx
