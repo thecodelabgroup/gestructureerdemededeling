@@ -1,5 +1,5 @@
-import { Heading, Box, Text } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
+import {Box, Heading, Text} from "@chakra-ui/react";
+import {useTranslation} from "react-i18next";
 
 export const MobileStatementLandingText = () => {
     const { t } = useTranslation();
@@ -17,5 +17,5 @@ export const MobileStatementLandingText = () => {
                 {t('mobile-landing-text-part-three')}
             </Text>
         </Box>
-    );
-};
+    )
+}
