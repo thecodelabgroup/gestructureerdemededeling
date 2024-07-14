@@ -118,3 +118,7 @@ p {
 .header-logo {
     max-height: 40px;
 }
+
+.statement-tabs-container {
+    width: 1000px;
+}
