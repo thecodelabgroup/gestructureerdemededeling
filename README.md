@@ -3,7 +3,7 @@ Checklist readme:
 Components: 
 - [x] Footer.tsx
 - [] Header.tsx
-- [] MobileStatementLandingText.tsx
+- [x] MobileStatementLandingText.tsx
 - [x] SponsorButton.tsx
 - [] StatementCreateTab.tsx
 - [] StatementGenerateTab.tsx
