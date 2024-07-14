@@ -8,6 +8,6 @@ Components:
 - [] StatementCreateTab.tsx
 - [] StatementGenerateTab.tsx
 - [] StatementLandingText.tsx
-- [] StatementTabs.tsx
+- [x] StatementTabs.tsx
 - [] StatementVerifyTab.tsx
 - [x] VersionSwitcher.tsx
