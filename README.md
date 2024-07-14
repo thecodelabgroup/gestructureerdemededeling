@@ -1,7 +1,7 @@
 Checklist readme: 
 
 Components: 
-- [] Footer.tsx
+- [x] Footer.tsx
 - [] Header.tsx
 - [] MobileStatementLandingText.tsx
 - [] SponsorButton.tsx
