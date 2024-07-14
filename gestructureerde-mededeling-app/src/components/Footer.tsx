@@ -15,7 +15,8 @@ export const Footer = (props: StackProps) => {
                     <img
                         src={Logo}
                         className="footer-logo"
-                        alt="Codelab logo"/>
+                        alt="Codelab logo"
+                    />
                 </div>
             </Text>
         </VStack>
