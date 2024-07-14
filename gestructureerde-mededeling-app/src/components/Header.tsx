@@ -13,16 +13,15 @@ import {Flag, flags} from "../utils/LanguageFlagsDirectory.tsx";
 function HeaderContent() {
     const mobileNavigation = useDisclosure()
     const [selectedLanguage, setSelectedLanguage] = useState<keyof Flag>('nl');
+    const mobileNavigationRef = useRef<HTMLButtonElement>()
 
-    const changeLanguage = (lng: keyof Flag) => {
-        i18n.changeLanguage(lng);
-        setSelectedLanguage(lng);
+    const changeLanguage = (language: keyof Flag) => {
+        i18n.changeLanguage(language)
+            .then(() => setSelectedLanguage(language));
     };
 
-    const mobileNavBtnRef = useRef<HTMLButtonElement>()
-
     useUpdateEffect(() => {
-        mobileNavBtnRef.current?.focus()
+        mobileNavigationRef.current?.focus()
     }, [mobileNavigation.isOpen])
 
     return (
@@ -30,7 +29,7 @@ function HeaderContent() {
             <Flex w='100%' h='100%' px='6' align='center' justify='space-between'>
                 <Flex align='center'>
                     <chakra.a display='block' aria-label='Chakra UI, Back to homepage'>
-                        <img src={Logo} style={{ maxHeight: "40px" }} alt="Logo"/>
+                        <img src={Logo} className="header-logo" alt="Logo"/>
                     </chakra.a>
                 </Flex>
 

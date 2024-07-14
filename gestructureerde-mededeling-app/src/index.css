@@ -115,3 +115,6 @@ p {
     color: #00044f;
 }
 
+.header-logo {
+    max-height: 40px;
+}
