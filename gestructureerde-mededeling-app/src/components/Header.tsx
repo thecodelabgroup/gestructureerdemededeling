@@ -8,28 +8,22 @@ import {GithubIcon} from './icons/GithubIcon.tsx'
 import {DiscordIcon} from './icons/DiscordIcon.tsx'
 import SponsorButton from "./SponsorButton.tsx";
 import i18n from "i18next";
+import {Flag, flags} from "../utils/LanguageFlagsDirectory.tsx";
 
 function HeaderContent() {
-    const mobileNav = useDisclosure()
-    const [selectedLang, setSelectedLang] = useState('en');
+    const mobileNavigation = useDisclosure()
+    const [selectedLanguage, setSelectedLanguage] = useState<keyof Flag>('nl');
 
-    const flags: Record<'nl' | 'fr' | 'en' | 'de', string> = {
-        nl: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1f3-1f1f1.svg',
-        fr: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1eb-1f1f7.svg',
-        en: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1ec-1f1e7.svg',
-        de: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f1e9-1f1ea.svg',
-    };
-
-    const changeLanguage = (lng: 'nl' | 'fr' | 'en' | 'de') => {
+    const changeLanguage = (lng: keyof Flag) => {
         i18n.changeLanguage(lng);
-        setSelectedLang(lng);
+        setSelectedLanguage(lng);
     };
 
     const mobileNavBtnRef = useRef<HTMLButtonElement>()
 
     useUpdateEffect(() => {
         mobileNavBtnRef.current?.focus()
-    }, [mobileNav.isOpen])
+    }, [mobileNavigation.isOpen])
 
     return (
         <>
@@ -99,7 +93,7 @@ function HeaderContent() {
                     </HStack>
                     <HStack spacing='5'>
                         <Menu>
-                            <MenuButton ml={{ base: '0', md: '3' }} as={IconButton} variant="outline" icon={<Image src={flags[selectedLang as 'nl' | 'fr' | 'en' | 'de']} alt={`${selectedLang} flag`} boxSize='20px' />}>
+                            <MenuButton ml={{ base: '0', md: '3' }} as={IconButton} variant="outline" icon={<Image src={flags[selectedLanguage as 'nl' | 'fr' | 'en' | 'de']} alt={`${selectedLanguage} flag`} boxSize='20px' />}>
                                 Language
                             </MenuButton>
                             <MenuList minWidth='50px'>
