@@ -11,9 +11,9 @@ import i18n from "i18next";
 import {Flag, flags} from "../utils/LanguageFlagsDirectory.tsx";
 
 function HeaderContent() {
-    const mobileNavigation = useDisclosure()
+    const mobileNavigation = useDisclosure();
     const [selectedLanguage, setSelectedLanguage] = useState<keyof Flag>('nl');
-    const mobileNavigationRef = useRef<HTMLButtonElement>()
+    const mobileNavigationRef = useRef<HTMLButtonElement>();
 
     const changeLanguage = (language: keyof Flag) => {
         i18n.changeLanguage(language)
@@ -21,8 +21,10 @@ function HeaderContent() {
     };
 
     useUpdateEffect(() => {
-        mobileNavigationRef.current?.focus()
-    }, [mobileNavigation.isOpen])
+        mobileNavigationRef.current?.focus();
+        },
+        [mobileNavigation.isOpen]
+    )
 
     return (
         <>
@@ -53,7 +55,7 @@ function HeaderContent() {
                                 _hover={{ color: 'gray.600' }}
                             />
                         </Link>
-                        <Link isExternal aria-label='Go to Chakra UI Discord page' href='/discord'>
+                        <Link isExternal href='#'>
                             <Icon
                                 as={DiscordIcon}
                                 display='block'
@@ -63,7 +65,7 @@ function HeaderContent() {
                                 _hover={{ color: 'gray.600' }}
                             />
                         </Link>
-                        <Link isExternal aria-label='Go to Chakra UI YouTube channel' href={"siteConfig.youtube"}>
+                        <Link isExternal href="#">
                             <Icon
                                 as={FaYoutube}
                                 display='block'
