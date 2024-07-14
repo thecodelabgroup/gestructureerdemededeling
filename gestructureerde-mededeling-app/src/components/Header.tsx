@@ -33,33 +33,11 @@ function HeaderContent() {
                     </chakra.a>
                 </Flex>
 
-                <Flex
-                    justify='flex-end'
-                    w='100%'
-                    align='center'
-                    color='gray.400'
-                    maxW='1100px'
-                >
-                    <VersionSwitcher
-                        width='auto'
-                        flexShrink={0}
-                        display={{ base: 'none', md: 'flex' }}
-                        marginRight='var(--chakra-space-5)'
-                    />
+                <Flex justify='flex-end' w='100%' align='center' color='gray.400' maxW='1100px'>
+                    <VersionSwitcher width='auto' flexShrink={0} display={{ base: 'none', md: 'flex' }} marginRight='var(--chakra-space-5)' />
                     <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
-                        <Link
-                            isExternal
-                            aria-label='Go to Codelab GitHub page'
-                            href="https://github.com/thecodelabgroup/gestructureerdemededeling"
-                        >
-                            <Icon
-                                as={GithubIcon}
-                                display='block'
-                                transition='color 0.2s'
-                                w='5'
-                                h='5'
-                                _hover={{ color: 'gray.600' }}
-                            />
+                        <Link isExternal aria-label='Go to Codelab GitHub page' href="https://github.com/thecodelabgroup/gestructureerdemededeling">
+                            <Icon as={GithubIcon} display='block' transition='color 0.2s' w='5' h='5' _hover={{ color: 'gray.600' }} />
                         </Link>
                         <Link
                             isExternal
