@@ -4,7 +4,7 @@ Components:
 - [x] Footer.tsx
 - [] Header.tsx
 - [] MobileStatementLandingText.tsx
-- [] SponsorButton.tsx
+- [x] SponsorButton.tsx
 - [] StatementCreateTab.tsx
 - [] StatementGenerateTab.tsx
 - [] StatementLandingText.tsx
