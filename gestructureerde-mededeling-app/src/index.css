@@ -122,3 +122,19 @@ p {
 .statement-tabs-container {
     width: 1000px;
 }
+
+.statement-landing-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.statement-landing-text-header {
+    padding-bottom: 30px;
+    color: #00044F;
+}
+
+.statement-landing-text-subheader {
+    width: 1000px;
+    color: #00044f;
+}
